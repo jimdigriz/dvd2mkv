@@ -10,8 +10,10 @@ The method here was cribbed from http://aperiodic.net/phil/archives/Geekery/loss
 
 You need will need at least a Debian Wheezy system with the following apt-get repositories:
  * Debian Backports
- * Debian Multimedia - http://www.deb-multimedia.org/
- * MKVToolNix - https://www.bunkus.org/videotools/mkvtoolnix/downloads.html#debian
+ * [Debian Multimedia](http://www.deb-multimedia.org/)
+ * [MKVToolNix](https://www.bunkus.org/videotools/mkvtoolnix/downloads.html#debian)
+
+Once plumbed in, install the dependencies with (`mkvtoolnix` needs to be from bunkus):
 
     sudo apt-get install -yy --no-install-recommends -t wheezy-backports lsdvd libdvdcss2 xmlstarlet transcode pv mkvtoolnix fuseiso9660 subtitleripper
 
