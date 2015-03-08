@@ -2,31 +2,6 @@
 
 set -eu
 
-# This script converts in a lossless manner a DVD to an MKV.  To use it just run
-#
-#    sh dvd2mkv
-#
-# It will use the first DVD drive it finds, but you can override this by setting
-# the environment variable `DVD` to point to the source device
-#
-# Thanks go to http://aperiodic.net/phil/archives/Geekery/lossless-dvd-to-mkv.html
-#
-# # Preflight
-#
-# you need will need at least a Debian Wheezy system with the following apt-get repositories:
-# * Debian Backports
-# * Debian Multimedia - http://www.deb-multimedia.org/
-# * MKVToolNix - https://www.bunkus.org/videotools/mkvtoolnix/downloads.html#debian
-#
-# sudo apt-get install -yy --no-install-recommends -t wheezy-backports lsdvd libdvdcss2 xmlstarlet transcode pv mkvtoolnix fuseiso9660 subtitleripper
-#
-# # Issues
-#
-# * put more tracks into the same mkv
-# * add chapters
-# * SIZE is not accurate
-# * OCR VobSub and add a second set of subtitles that are pure text
-
 DVD=${DVD:-$(ls -1 /dev/dvd[0-9]* | head -n1)}
 if [ ! -e $DVD ]; then
 	echo "unable to find DVD drive (/dev/dvd[0-9]*)" >&2
