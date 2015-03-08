@@ -1,6 +1,6 @@
 This script converts in a lossless manner a DVD into a MKV file.  To use it just run
 
-    sh dvd2mkv
+    dvd2mkv
 
 It will use the first DVD drive it finds, but you can override this by setting the environment variable `DVD` to point to the source device
 
