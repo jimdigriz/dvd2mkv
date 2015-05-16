@@ -24,7 +24,7 @@ fi
 sed -i 's/&/\&amp;/g' output.lsdvd
 
 TITLE=$(xmlstarlet sel -t -v /lsdvd/title output.lsdvd)
-TRACK=$(xmlstarlet sel -t -v /lsdvd/longest_track output.lsdvd)
+TRACK=${TRACK:-$(xmlstarlet sel -t -v /lsdvd/longest_track output.lsdvd)}
 SIZE=$(tcprobe -i $DVD -d 2 -T $TRACK 2>&1 | awk '/block from/ { if ($(NF)>A) A=$(NF) } END { print A*2048 }')
 
 echo "title '$TITLE', longest track $TRACK";
